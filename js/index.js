@@ -51,6 +51,33 @@ ctaButton.textContent = siteContent["cta"]["button"];
 let ctaImg = document.getElementById("cta-img");
 ctaImg.src = siteContent["cta"]["img-src"];
 
+
+// CONTACT
+let contactH4 = document.querySelector(".contact h4");
+contactH4.textContent = siteContent["contact"]["contact-h4"];
+
+let contactArray = ["address", "phone", "email"];
+// console.log(contactArray);
+let contactInfo = document.querySelectorAll(".contact p"); // put each array element into a <p>
+contactInfo.forEach((contactP, i) => {
+  contactP.textContent = siteContent["contact"][`${contactArray[i]}`]
+});
+
+{/* <section class="contact">
+<h4></h4>
+<p></p>
+<p></p>
+<p></p>
+</section>
+
+"contact": {
+  "contact-h4" : "Contact",
+  "address" : "123 Way 456 Street Somewhere, USA",
+  "phone" : "1 (888) 888-8888",
+  "email" : "sales@greatidea.io",
+}, */}
+
+
 // FOOTER
 let footerP = document.querySelector("footer p");
 footerP.textContent = siteContent["footer"]["copyright"];
