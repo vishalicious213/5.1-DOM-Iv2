@@ -41,6 +41,14 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+// NAV
+let navLinks = document.querySelectorAll("nav a")
+// console.log("navLinks",navLinks);
+navLinks.forEach((link, i) => {
+  link.textContent = siteContent["nav"][`nav-item-${i+1}`] // siteContent nav-item-# names
+});
+
+
 // CTA
 let ctaText = document.querySelector(".cta-text h1");
 ctaText.textContent = siteContent["cta"]["h1"];
@@ -50,6 +58,23 @@ ctaButton.textContent = siteContent["cta"]["button"];
 
 let ctaImg = document.getElementById("cta-img");
 ctaImg.src = siteContent["cta"]["img-src"];
+
+
+// MAIN-CONTENT
+let middleImg = document.getElementById("middle-img");
+middleImg.src = siteContent["main-content"]["middle-img-src"];
+
+let mainContentHeadings = document.querySelectorAll(".text-content h4");
+// console.log(mainContentHeadings); // empty textContent. values are in siteContent
+
+// console.log(siteContent["main-content"]["vision-h4"]);
+// let headingArray = [siteContent["main-content"]["features-h4"], siteContent["main-content"]["about-h4"], siteContent["main-content"]["services-h4"], siteContent["main-content"]["product-h4"], siteContent["main-content"]["vision-h4"]]; // need to find a cleaner way to do this (array?)
+let headingArray = ["features-h4", "about-h4", "services-h4", "product-h4", "vision-h4"];
+// console.log(headingArray);
+mainContentHeadings.forEach((heading, i) => {
+  heading.textContent = siteContent["main-content"][headingArray[i]];
+  // console.log(heading.textContent);
+});
 
 
 // CONTACT
@@ -62,20 +87,6 @@ let contactInfo = document.querySelectorAll(".contact p"); // put each array ele
 contactInfo.forEach((contactP, i) => {
   contactP.textContent = siteContent["contact"][`${contactArray[i]}`]
 });
-
-{/* <section class="contact">
-<h4></h4>
-<p></p>
-<p></p>
-<p></p>
-</section>
-
-"contact": {
-  "contact-h4" : "Contact",
-  "address" : "123 Way 456 Street Somewhere, USA",
-  "phone" : "1 (888) 888-8888",
-  "email" : "sales@greatidea.io",
-}, */}
 
 
 // FOOTER
