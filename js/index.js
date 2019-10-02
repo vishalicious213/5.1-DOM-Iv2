@@ -51,16 +51,6 @@ ctaButton.textContent = siteContent["cta"]["button"];
 let ctaImg = document.getElementById("cta-img");
 ctaImg.src = siteContent["cta"]["img-src"];
 
-{/* <section class="cta">
-<div class="cta-text">
-    <h1></h1>
-    <button></button>
-</div>
-<img id="cta-img" src="" alt="Image of a code snippet.">
-</section>
-
-"cta": {
-  "h1": "DOM Is Awesome",
-  "button": "Get Started",
-  "img-src": "img/header-img.png"
-}, */}
+// FOOTER
+let footerP = document.querySelector("footer p");
+footerP.textContent = siteContent["footer"]["copyright"];
