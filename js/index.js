@@ -67,13 +67,17 @@ middleImg.src = siteContent["main-content"]["middle-img-src"];
 let mainContentHeadings = document.querySelectorAll(".text-content h4");
 // console.log(mainContentHeadings); // empty textContent. values are in siteContent
 
-// console.log(siteContent["main-content"]["vision-h4"]);
-// let headingArray = [siteContent["main-content"]["features-h4"], siteContent["main-content"]["about-h4"], siteContent["main-content"]["services-h4"], siteContent["main-content"]["product-h4"], siteContent["main-content"]["vision-h4"]]; // need to find a cleaner way to do this (array?)
 let headingArray = ["features-h4", "about-h4", "services-h4", "product-h4", "vision-h4"];
 // console.log(headingArray);
 mainContentHeadings.forEach((heading, i) => {
-  heading.textContent = siteContent["main-content"][headingArray[i]];
+  heading.textContent = siteContent["main-content"][headingArray[i]]
   // console.log(heading.textContent);
+});
+
+let mainContentText = document.querySelectorAll(".text-content p");
+let contentArray = ["features", "about", "services", "product", "vision"];
+mainContentText.forEach((paragraph, i) => {
+  paragraph.textContent = siteContent["main-content"][`${contentArray[i]}-content`]
 });
 
 
