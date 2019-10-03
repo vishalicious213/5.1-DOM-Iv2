@@ -96,3 +96,18 @@ contactInfo.forEach((contactP, i) => {
 // FOOTER
 let footerP = document.querySelector("footer p");
 footerP.textContent = siteContent["footer"]["copyright"];
+
+
+// ADD NEW CONTENT
+navLinks.forEach((link) => (link.style.color = 'green'));
+
+let navBlog = document.createElement("a");
+navBlog.textContent = "Blog";
+let navMenu = document.querySelector("nav");
+navMenu.appendChild(navBlog);
+navBlog.style.color = "green"; // stretch
+
+let navHome = document.createElement("a");
+navHome.textContent = "Home";
+navMenu.prepend(navHome);
+navHome.style.color = "green"; // stretch
